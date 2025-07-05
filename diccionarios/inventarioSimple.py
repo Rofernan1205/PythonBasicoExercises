@@ -30,7 +30,8 @@ def select_menu(accion):
         cantidad = int(input("cantidad: "))
         agregar_producto(id, producto, precio, cantidad)
     elif accion == 2:
-        actualizar_producto()
+        id = input("id : ").strip()
+        actualizar_producto(id)
     elif accion == 3:
         id = input("id :").strip()
         buscar_producto(id)
@@ -50,8 +51,25 @@ def agregar_producto(id, producto, precio, cantidad):
     main_menu()
 
 
-def actualizar_producto():
-    pass
+def actualizar_producto(id):
+    for producto in productos:
+        if producto["id"] == id:
+            u_id = input(f"id :{producto["id"]}").strip()
+            u_producto = input(f"producto :{producto["producto"]}").strip()
+            u_precio = input(f"precio : {producto["precio"]}").strip()
+            u_cantidad = input(f"cantidad : {producto["cantidad"]}").strip()
+
+            producto.update({"id": u_id if u_id else producto["id"]
+                                , "producto": u_producto if u_producto else producto["producto"]
+                                , "precio": float(u_precio) if u_precio else producto["precio"]
+                                , "cantidad": int(u_cantidad) if u_cantidad else producto["cantidad"]
+                             })
+
+            break
+        else:
+            print("Producto no existe")
+    time.sleep(5)
+    main_menu()
 
 
 def buscar_producto(id):
