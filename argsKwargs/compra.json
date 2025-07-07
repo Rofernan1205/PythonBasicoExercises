@@ -1,0 +1,20 @@
+{
+    "cliente": "Rodrigo",
+    "metodo_pago": "Tarjeta",
+    "envio": "Delivery",
+    "productos": [
+        {
+            "Producto": "Laptop",
+            "Precio": 2500
+        },
+        {
+            "Producto": "Mouse",
+            "Precio": 150
+        },
+        {
+            "Producto": "Audífonos",
+            "Precio": 350
+        }
+    ],
+    "total": 3000
+}
